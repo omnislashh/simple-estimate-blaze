@@ -217,6 +217,66 @@ Template.form.events({
       // Clear form
       target.text.value = '';
     },
+
+    "submit .marketplace-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+  
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+  
+      // Insert a task into the collection
+      Meteor.call('projects.insert-site-marketplace', text);
+      
+      // Clear form
+      target.text.value = '';
+    },
+
+    "submit .e-commerce-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+  
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+  
+      // Insert a task into the collection
+      Meteor.call('projects.insert-site-ecommerce', text);
+      
+      // Clear form
+      target.text.value = '';
+    },
+
+    "submit .web-app-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+  
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+  
+      // Insert a task into the collection
+      Meteor.call('projects.insert-site-web-app', text);
+      
+      // Clear form
+      target.text.value = '';
+    },
+
+    "submit .other-site-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+  
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+  
+      // Insert a task into the collection
+      Meteor.call('projects.insert-site-autre', text);
+      
+      // Clear form
+      target.text.value = '';
+    },
     
     "submit .item-form"(event) {
       // Prevent default browser form submit

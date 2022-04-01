@@ -17,6 +17,67 @@ Meteor.methods({
       userId: this.userId,
     })
   },
+  'projects.insert-site-marketplace'(text) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ProjectsCollection.insert({
+      text,
+      type: "site-marketplace",
+      price: 30,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+  'projects.insert-site-ecommerce'(text) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ProjectsCollection.insert({
+      text,
+      type: "site-ecommerce",
+      price: 40,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+  'projects.insert-site-web-app'(text) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ProjectsCollection.insert({
+      text,
+      type: "site-web-app",
+      price: 50,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'projects.insert-site-autre'(text) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ProjectsCollection.insert({
+      text,
+      type: "site-autre",
+      price: 60,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
 
   'projects.insert'(text) {
     check(text, String);

@@ -1,0 +1,23 @@
+<template name="allprojects">
+    test
+    {{> menu}} 
+    <h2>All projects</h2>
+    <div class="filter">
+        <button id="hide-completed-button">
+            {{#if hideCompleted}}
+                    Show All
+            {{else}}
+                    Hide Completed
+            {{/if}}
+        </button>
+    </div>
+    {{#if isLoading}}
+        <div class="loading">loading...</div>
+    {{/if}}
+    <div class="projects">
+        {{#each projects}}
+            {{> project}}                       
+                              
+        {{/each}}   
+    </div>
+</template>

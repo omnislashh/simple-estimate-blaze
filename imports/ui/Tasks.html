@@ -1,0 +1,26 @@
+<template name="alltasks">
+    
+    {{> menu}} 
+    <h2>All tasks</h2>
+    <div class="filter">
+        <button id="hide-completed-button">
+            {{#if hideCompleted}}
+                    Show All
+            {{else}}
+                    Hide Completed
+            {{/if}}
+        </button>
+    </div>
+    {{#if isLoading}}
+        <div class="loading">loading...</div>
+    {{/if}}
+    <!-- <div class="taskFeatures">{{> taskFeatures}}</div> -->
+    <div class="tasks">
+        
+        {{#each tasks}}
+            {{> task}}                       
+                        <!-- create real item in bdd - form ? -->
+                        <!-- conserver etat appli-blaze ? maj liste  -->        
+        {{/each}}   
+    </div>
+</template>

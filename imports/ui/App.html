@@ -40,7 +40,7 @@
                     <div class="loading">loading...</div>
                 {{/if}}
                 <h2>Tasks</h2>
-                <div class="taskfeatures">{{> taskfeatures}}</div>
+                <!-- <div class="taskfeatures">{{> taskfeatures}}</div> -->
                 <div class="tasks">
                     {{#each tasks}}
                         {{> task}}                       
@@ -54,12 +54,12 @@
                         {{> project}}
                     {{/each}}
                 </ul>
-                <h2>Items</h2>
+                <!-- <h2>Items</h2>
                 <ul class="items">
                     {{#each items}}
                         {{> item}}
                     {{/each}}
-                </ul>
+                </ul> -->
                 
             {{else}}
                 {{> login }}
@@ -96,29 +96,46 @@
         <input type="text" name="text" placeholder="Type to add new projects" />
         <button type="submit">Add Project</button>
     </form> -->
-    <form class="task-form">
+    <h3>Attente sur design</h3>
+    <form class="standard-form">
+        <input type="text" name="text" placeholder="Type to add new standard task" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Standard</button>
+    </form>  
+    <form class="soigne-form">
+        <input type="text" name="text" placeholder="Type to add new 'soigné' task" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Soigné</button>
+    </form>  
+    <form class="haut-form">
+        <input type="text" name="text" placeholder="Type to add new 'Haut de gamme' task" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Haut</button>
+    </form>
+    <h3>Langues</h3>
+    <!-- <form class="task-form">
         <input type="text" name="text" placeholder="Type to add new tasks" />
         <input type="text" name="project" placeholder="choose associated project" />
         <button type="submit">Add Task</button>
-    </form>   
-    <form class="item-form">
+    </form>    -->
+    <!-- <form class="item-form">
         <input type="text" name="text" placeholder="Type to add new item" />
         <input type="text" name="task" placeholder="Type to add associated task to item" />
         <button type="submit">Add Item</button>
-    </form>
+    </form> -->
 </template>
 
 <template name="test">
-    test
-    <p>test</p>
+    <!-- test
+    <p>test</p> -->
 </template>
-<template name="item-test">
+<!-- <template name="item-test">
     <li>
         <input type="checkbox" checked="{{isChecked}}" class="toggle-checked" />
         <span>{{text}}</span>
-        <!-- <button class="delete">&times;</button> -->
+        
     </li>
-</template>
+</template> -->
 
 
 

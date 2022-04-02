@@ -17,6 +17,57 @@ Meteor.methods({
       userId: this.userId,
     })
   },
+  
+  'tasks.insert-attente-standard'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "attente-standard",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+ 
+  'tasks.insert-attente-soigne'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "attente-standard",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-attente-haut'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "attente-haute",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
 
   'tasksfeatures.find' () {
     TasksCollection.aggregate([ { 

@@ -21,7 +21,8 @@ AccountsTemplates.configureRoute('signIn', {
 const insertTask = (taskText, user) =>
   TasksCollection.insert({
     text: taskText,
-    project: taskProject,
+    project: 'Project 1',
+    type: "exemple-task",
     price: 10,
     userId: user._id,
     createdAt: new Date(),
@@ -29,6 +30,8 @@ const insertTask = (taskText, user) =>
 const insertProject = (projectText, user) =>
 ProjectsCollection.insert({
   text: projectText,
+  type: "exemple-project",
+  price: 5,
   userId: user._id,
   createdAt: new Date(),
 });
@@ -36,7 +39,7 @@ ProjectsCollection.insert({
 const insertItem = (itemText, user) =>
 ItemsCollection.insert({
   text: itemText,
-  task: itemTask,
+  // task: itemTask,
   userId: user._id,
   createdAt: new Date(),
 });

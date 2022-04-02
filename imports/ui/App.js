@@ -189,6 +189,55 @@ Template.form.events({
       target.text.value = '';
       target.project.value = '';
     },
+
+    "submit .standard-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+  
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+  
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-attente-standard', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .soigne-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+  
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+  
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-attente-soigne', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .haut-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+  
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+  
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-attente-haut', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
     "submit .project-form"(event) {
       // Prevent default browser form submit
       event.preventDefault();

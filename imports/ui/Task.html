@@ -3,9 +3,10 @@
         <input type="checkbox" checked="{{isChecked}}" class="toggle-checked" />
         task:  <span>{{text}}</span>- for the project: 
         <span>{{project}}</span>
-        <span>price: {{price}}</span>
+        <span>{{type}}</span>
+        <span>price: {{price}} €</span>
         
-        <a href="/task/{{_id}}/{{price}}">View Details</a>
+        <a href="/task/{{_id}}/{{price}}/{{type}}/{{project}}">View Details</a>
         <button class="delete">&times;</button>
          <!-- {{> items-form}}   -->
          {{totalfeatures}}

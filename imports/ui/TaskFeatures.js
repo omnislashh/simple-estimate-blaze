@@ -1,49 +1,49 @@
 import { Template } from 'meteor/templating';
 import { TasksCollection } from "../db/TasksCollection"; 
+import { Meteor } from 'meteor/meteor';
+import { ReactiveDict } from 'meteor/reactive-dict'
 
 import './TaskFeatures.html';
+import './App.html';
+
+Template.taskfeatures.onCreated(async function () {
+  const methodCall = (methodName, ...args) => 
+    new Promise((resolve, reject) => {
+      Meteor.call(methodName, ...args, (error, result) => {
+        if (error) reject(error);
+        else resolve(result);
+      });
+    });
+  const totalFeatures = methodCall('bar')
+  let feat = await totalFeatures.then(function(result) {
+    return result
+  })
+  console.log(feat.toString())
+  let toUse = feat.toString()
+  this.state = new ReactiveDict();
+  this.state.set('myTotalResults', toUse);
+});
 
 Template.taskfeatures.helpers({
-    // declare a new helper on your user page template
-    priceSum: function() {
-        return TasksCollection.rawCollection().aggregate([ { 
-                $group: { 
-                    _id: null, 
-                    totalfeatures: { 
-                        $sum: "$price" 
-                    } 
-                } 
-                },
-                { $project: { _id: 0, totalfeatures: 1 } }
-            ])
-    }
+  priceSum() {
+    const inst = Template.instance();    
+    return inst.state.get('myTotalResults');
+  }
+});
 
-    // priceSum: function() {
-    //     let myQuery = TasksCollection.aggregate([ { 
-    //         $group: { 
-    //             _id: null, 
-    //             totalfeatures: { 
-    //                 $sum: "$price" 
-    //             } 
-    //         } 
-    //       }])
-    //       return myQuery
-    //     }
-        
-    // priceSum: function() {
-    //     return 70;
-    // }
-    // }
-  });
-
-// TasksCollection.aggregate([ { 
-//     $group: { 
-//         _id: null, 
-//         totalfeatures: { 
-//             $sum: "$price" 
-//         } 
-//     } 
-//     },
-//     { $project: { _id: 0, totalfeatures: 1 } }
-// ])
-
+// Template.taskfeatures.helpers({
+//   priceSum: async function () {
+//       const methodCall = (methodName, ...args) => 
+//         new Promise((resolve, reject) => {
+//           Meteor.call(methodName, ...args, (error, result) => {
+//             if (error) reject(error);
+//             else resolve(result);
+//           });
+//         });
+//       const totalFeatures = methodCall('bar')
+//       let feat = await totalFeatures.then(function(result) {
+//         // return result
+//       })
+//       console.log(feat)
+//       return feat
+//   }});

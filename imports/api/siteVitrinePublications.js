@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import { ProjectsCollection } from '/imports/db/ProjectsCollection';
+import { SiteVitrineCollection } from '/imports/db/SiteVitrineCollection';
 
-Meteor.publish('projects', function publishProjects() {
-  return ProjectsCollection.find({ userId: this.userId });
+Meteor.publish('sitevitrine', function publishSiteVitrine() {
+  return SiteVitrineCollection.find({ userId: this.userId });
 });
 // Meteor.publish('projects-number', function publishProjects() {
 //   return db.ProjectsCollection.count();

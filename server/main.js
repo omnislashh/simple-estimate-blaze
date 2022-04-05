@@ -17,6 +17,36 @@ AccountsTemplates.configureRoute('signIn', {
   name: 'signin',
   path: '/signin'
 });
+Meteor.methods({
+
+  bar() {
+    // Do other stuff...
+    let priceTotal = 0
+    const result = 
+    Promise.await(
+    TasksCollection.rawCollection()
+        .aggregate([{ 
+        $group: { 
+            _id: null, 
+            totalfeatures: { 
+                $sum: "$price" 
+            } 
+        } 
+        },
+        { $project: { _id: 0, totalfeatures: 1 } }
+    ])
+        .toArray()
+    );
+    console.log(result[0])
+    for (const [key, value] of Object.entries(result[0])) {
+      console.log(`${key}: ${value}`);
+      priceTotal = `${value}`
+    }
+    console.log(priceTotal)
+    return priceTotal
+  }
+  
+});
 
 const insertTask = (taskText, user) =>
   TasksCollection.insert({
@@ -43,6 +73,7 @@ ItemsCollection.insert({
   userId: user._id,
   createdAt: new Date(),
 });
+
 
 const SEED_USERNAME = 'meteorite';
 const SEED_PASSWORD = 'password';

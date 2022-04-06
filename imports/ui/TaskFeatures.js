@@ -18,7 +18,7 @@ Template.taskfeatures.onCreated(async function () {
   let feat = await totalFeatures.then(function(result) {
     return result
   })
-  console.log(feat.toString())
+  console.log("your total features: "+feat.toString()+" €")
   let toUse = feat.toString()
   this.state = new ReactiveDict();
   this.state.set('myTotalResults', toUse);
@@ -26,7 +26,7 @@ Template.taskfeatures.onCreated(async function () {
 
 Template.taskfeatures.helpers({
   priceSum() {
-    const inst = Template.instance();    
+    // const inst = Template.instance();    
     return inst.state.get('myTotalResults');
   }
 });

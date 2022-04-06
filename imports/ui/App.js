@@ -238,6 +238,326 @@ Template.form.events({
       target.project.value = '';
     },
 
+    "submit .langue-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-langue', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .encaissement-simple-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-simple-payment', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+    
+    "submit .encaissement-recurrent-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-recurrent-payment', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+    
+    "submit .not-moneytized-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-no-payment', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+    
+    "submit .client-account-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-client-account', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+    
+    "submit .no-client-account-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-no-client-account-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .blog-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-blog-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .integration-social-media-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-integration-social-media-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .inscription-newsletter-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-inscription-newsletter-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .moteur-recherche-interne-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-moteur-recherche-interne-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .module-prise-rdv-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-module-prise-rdv-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .module-demande-devis-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-module-demande-devis-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .gestion-facture-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-gestion-facture-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+    
+    "submit .integration-crm-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-integration-crm-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+    
+    "submit .hebergement-self-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-hebergement-self-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .hebergement-standard-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-hebergement-standard-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .hebergement-premium-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-hebergement-premium-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+ 
+    "submit .self-assist-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-self-assist-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .minimal-assist-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-minimal-assist-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
+    "submit .regular-assist-form"(event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+
+      // Get value from form element
+      const target = event.target;
+      const text = target.text.value;
+      const project = target.project.value;
+
+      // Insert a task into the collection
+      Meteor.call('tasks.insert-regular-assist-form', text, project);
+      // Clear form
+      target.text.value = '';
+      target.project.value = '';
+    },
+
     "submit .project-form"(event) {
       // Prevent default browser form submit
       event.preventDefault();

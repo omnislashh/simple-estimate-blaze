@@ -17,7 +17,7 @@ Meteor.methods({
       userId: this.userId,
     })
   },
-  
+
   'tasks.insert-attente-standard'(text, project) {
     check(text, String);
  
@@ -69,19 +69,346 @@ Meteor.methods({
     })
   },
 
-  'tasksfeatures.find' () {
-    TasksCollection.aggregate([ { 
-      $group: { 
-          _id: null, 
-          totalfeatures: { 
-              $sum: "$price" 
-          } 
-      } 
-      },
-      { $project: { _id: 0, totalfeatures: 1 } }
-  ])
+  'tasks.insert-langue'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "language",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-simple-payment'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "Simple CB or Paypal",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-recurrent-payment'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "For payment subscribe users",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-no-payment'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "No payment through website",
+      price: 5,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-client-account'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "client account system",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-no-client-account-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "no client account system",
+      price: 5,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-blog-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "blog",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-integration-social-media-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "social media",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-inscription-newsletter-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "newsletter",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-moteur-recherche-interne-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "search bar",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-module-prise-rdv-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "rdv module",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
   },
  
+  'tasks.insert-module-demande-devis-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "estimation module",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-gestion-facture-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "invoice module",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-integration-crm-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "CRM module",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+  
+  'tasks.insert-hebergement-self-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "Self hosting",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-hebergement-premium-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "Premium hosting",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-hebergement-standard-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "standard hosting",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-self-assist-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "self assist",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+ 
+  'tasks.insert-minimal-assist-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "minimal assist",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-regular-assist-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "regular assist",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
   'tasks.remove'(taskId) {
     check(taskId, String);
  

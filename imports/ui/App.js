@@ -12,6 +12,8 @@ import "./Login.js";
 import "./Item.js";
 import "./Testing.js";
 import "./TaskFeatures.js";
+import "./ProjectsTotal.js";
+import "./TotalGlobal.js";
 const getUser = () => Meteor.user();
 const isUserLogged = () => !!getUser();
  

@@ -44,6 +44,79 @@ Meteor.methods({
     }
     console.log(priceTotal)
     return priceTotal
+  },
+
+  totalSites() {
+    // Do other stuff...
+    let priceTotal = 0
+    const result = 
+    Promise.await(
+    ProjectsCollection.rawCollection()
+        .aggregate([{ 
+        $group: { 
+            _id: null, 
+            totalwebsites: { 
+                $sum: "$price" 
+            } 
+        } 
+        },
+        { $project: { _id: 0, totalwebsites: 1 } }
+    ])
+        .toArray()
+    );
+    console.log(result[0])
+    for (const [key, value] of Object.entries(result[0])) {
+      console.log(`${key}: ${value}`);
+      priceTotal = `${value}`
+    }
+    console.log(priceTotal)
+    return priceTotal
+  },
+
+  totalGlobal() {
+    let priceTotal1 = 0
+    const result1 = 
+    Promise.await(
+    TasksCollection.rawCollection()
+        .aggregate([{ 
+        $group: { 
+            _id: null, 
+            totalfeatures: { 
+                $sum: "$price" 
+            } 
+        } 
+        },
+        { $project: { _id: 0, totalfeatures: 1 } }
+    ])
+        .toArray()
+    );
+    console.log(result1[0])
+    for (const [key, value] of Object.entries(result1[0])) {
+      console.log(`${key}: ${value}`);
+      priceTotal1 = `${value}`
+    }
+    let priceTotal2 = 0
+    const result2 = 
+    Promise.await(
+    ProjectsCollection.rawCollection()
+        .aggregate([{ 
+        $group: { 
+            _id: null, 
+            totalwebsites: { 
+                $sum: "$price" 
+            } 
+        } 
+        },
+        { $project: { _id: 0, totalwebsites: 1 } }
+    ])
+        .toArray()
+    );
+    console.log(result2[0])
+    for (const [key, value] of Object.entries(result2[0])) {
+      console.log(`${key}: ${value}`);
+      priceTotal2 = `${value}`
+    }
+    return parseFloat(priceTotal1) + parseFloat(priceTotal2)
   }
   
 });

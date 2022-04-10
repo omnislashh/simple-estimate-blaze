@@ -16,6 +16,141 @@ Meteor.methods({
       userId: this.userId,
     })
   },
+
+  'items.insert-name-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-firstname-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-type-entreprise-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-email-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-tel-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-company-name-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-cp-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-description-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'items.insert-disponibilites-form'(text, task) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    ItemsCollection.insert({
+      text,
+      task,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
  
   'items.remove'(itemId) {
     check(itemId, String);

@@ -562,6 +562,108 @@ Meteor.methods({
     })
   },
 
+  'tasks.insert-creation-logo-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "logo creation",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-graphic-chart-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "graphic-chart creation",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-redaction-contenu-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "written content",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-accompagnement-seo-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "SEO support",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-marketing-plan-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "marketing plan",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
+  'tasks.insert-accompagnement-sea-form'(text, project) {
+    check(text, String);
+ 
+    if (!this.userId) {
+      throw new Meteor.Error('Not authorized.');
+    }
+ 
+    TasksCollection.insert({
+      text,
+      project,
+      type: "SEA support",
+      price: 10,
+      createdAt: new Date,
+      userId: this.userId,
+    })
+  },
+
   'tasks.remove'(taskId) {
     check(taskId, String);
  

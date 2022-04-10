@@ -54,12 +54,12 @@
                         {{> project}}
                     {{/each}}
                 </ul>
-                <!-- <h2>Items</h2>
+                <h2>Items</h2>
                 <ul class="items">
                     {{#each items}}
                         {{> item}}
                     {{/each}}
-                </ul> -->
+                </ul>
                 
             {{else}}
                 {{> login }}
@@ -265,11 +265,99 @@
         <input type="text" name="project" placeholder="choose associated website project" required="required"/>
         <button type="submit">Add more than 20000€</button>
     </form>
+    <h3>Avez-vous besoin des prestations suivantes ?</h3>
+    <form class="creation-logo-form">
+        <input type="text" name="text" placeholder="Type to add logo creation" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Add logo creation</button>
+    </form>
+    <form class="graphic-chart-form">
+        <input type="text" name="text" placeholder="Type to add graphic chart" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Add graphic chart</button>
+    </form>
+    <form class="redaction-contenu-form">
+        <input type="text" name="text" placeholder="Type to add written content" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Add written content</button>
+    </form>
+    <form class="accompagnement-seo-form">
+        <input type="text" name="text" placeholder="Type to add seo support" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Add SEO support</button>
+    </form>
+    <form class="accompagnement-sea-form">
+        <input type="text" name="text" placeholder="Type to add sea support" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Add SEA support</button>
+    </form>
+    <form class="marketing-plan-form">
+        <input type="text" name="text" placeholder="Type to add marketing plan" />
+        <input type="text" name="project" placeholder="choose associated website project" required="required"/>
+        <button type="submit">Add marketing plan</button>
+    </form>
     <!-- <form class="task-form">
         <input type="text" name="text" placeholder="Type to add new tasks" />
         <input type="text" name="project" placeholder="choose associated project" />
         <button type="submit">Add Task</button>
     </form>    -->
+    <h3>Vos infos</h3>
+    <form class="name-form">
+        <input type="text" name="text" placeholder="Type to add name" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add name</button>
+    </form>
+    <form class="firstname-form">
+        <input type="text" name="text" placeholder="Type to add firstname" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add firstname</button>
+    </form>
+    <form class="email-form">
+        <input type="text" name="text" placeholder="Type to add email" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add email</button>
+    </form>
+    <form class="tel-form">
+        <input type="text" name="text" placeholder="Type to add tel" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add tel</button>
+    </form>
+    <form class="type-entreprise-form">
+        <label for="type-entreprise">Choose a type:</label>
+        <select name="text" id="type-entreprise">
+            <option value="">--Please choose an option--</option>
+            <option value="company">Company</option>
+            <option value="company in creation">Company in creation</option>
+            <option value="start-up">Start-up</option>
+            <option value="association">Association</option>
+            <option value="administration">Administration</option>
+            <option value="freelancer">Freelancer</option>
+            <option value="particular">Particular</option>
+            <option value="student">Student</option>
+        </select>
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add Company Type</button>
+    </form>
+    <form class="company-name-form">
+        <input type="text" name="text" placeholder="Type to add company name" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add company name</button>
+    </form>
+    <form class="cp-form">
+        <input type="text" name="text" placeholder="Type to add cp" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add Postal code</button>
+    </form>
+    <form class="description-form">
+        <input type="text" name="text" placeholder="Type to add description" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add description</button>
+    </form>
+    <form class="disponibilites-form">
+        <input type="text" name="text" placeholder="Type to add availabilities" />
+        <input type="text" name="task" placeholder="Type to add associated task to item" />
+        <button type="submit">Add availabilities</button>
+    </form>
     <!-- <form class="item-form">
         <input type="text" name="text" placeholder="Type to add new item" />
         <input type="text" name="task" placeholder="Type to add associated task to item" />

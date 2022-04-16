@@ -1,12 +1,12 @@
 <template name="task">
     <li>
         <input type="checkbox" checked="{{isChecked}}" class="toggle-checked" />
-        task:  <span>{{text}}</span>- for the project: 
-        <span>{{project}}</span>
-        <span>{{type}}</span>
-        <span>price: {{price}} €</span>
+        <span class="aligned dark-text">task: </span><span class="aligned">{{text}} </span><span class="aligned dark-text">- for the project: </span>
+        <span class="aligned">{{project}}</span>
+        <span class="aligned">{{type}}</span>
+        <span class="aligned dark-text">price: {{price}} €</span>
         
-        <a href="/task/{{_id}}/{{price}}/{{type}}/{{project}}">View Details</a>
+        <a class="view-button" href="/task/{{_id}}/{{price}}/{{type}}/{{project}}">View Details</a>
         <button class="delete">&times;</button>
          <!-- {{> items-form}}   -->
          {{totalfeatures}}

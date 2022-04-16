@@ -1,7 +1,8 @@
 body {
-  font-family: sans-serif;
-  background-color: #315481;
-  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  font-family: 'Raleway';
+  background-color: #ddd;
+  /* background-color: #ffe0cc; */
+  /* background-image: linear-gradient(to bottom, #315481, #918e82 100%); */
   background-attachment: fixed;
 
   position: absolute;
@@ -33,6 +34,8 @@ button:focus {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  color: #ff6600;
+  text-align: center;
 }
 
 .app-header {
@@ -40,6 +43,8 @@ button:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: white;
+  text-align: center;
 }
 
 .main {
@@ -57,8 +62,8 @@ button:focus {
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  background: #ff6600;
+  /* background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%); */
   padding: 20px 15px 15px 15px;
   position: relative;
   box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
@@ -114,7 +119,8 @@ header {
 .tasks > li {
   display: flex;
   padding: 16px;
-  border-top: 3px solid black;
+  /* border-top: 3px solid black; */
+  align-items: center;
   border-bottom: #eee solid 1px;
 }
 
@@ -125,6 +131,8 @@ header {
 .tasks > li > button {
   justify-self: flex-end;
   background-color: #ff3046;
+  margin: 3px;
+  border-radius: 5px;
 }
 .projects {
   list-style-type: none;
@@ -138,6 +146,7 @@ header {
 .projects > li {
   display: flex;
   padding: 16px;
+  align-items: center;
   border-bottom: #eee solid 1px;
 }
 
@@ -148,6 +157,35 @@ header {
 .projects > li > button {
   justify-self: flex-end;
   background-color: #ff3046;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.items {
+  list-style-type: none;
+  padding-inline-start: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.items > li {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  border-bottom: #eee solid 1px;
+}
+
+.items > li > span {
+  flex-grow: 1;
+}
+
+.items > li > button {
+  justify-self: flex-end;
+  background-color: #ff3046;
+  margin: 3px;
+  border-radius: 5px;
 }
 .filter {
   display: flex;
@@ -155,7 +193,9 @@ header {
 }
 
 .filter > button {
-  background-color: #62807e;
+  background-color: #333;
+  border-radius: 5px;
+  margin: 3px;
 }
 
 .login-form {
@@ -219,4 +259,75 @@ header {
 }
 .subtasks {
   display: flex;
+}
+
+.menu-nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Raleway';
+  background-color: #ff6600;
+  align-items: center;
+}
+.item-nav {
+  color:white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.item-nav :hover{
+  opacity: 0.7;
+}
+.li-img {
+  width: 100%;
+  margin: 6px;
+}
+
+form {
+  margin-left: 20em;
+  margin-right: 20em;
+  text-align: left; 
+}
+
+h3 {
+  margin-left: 20em;
+  margin-right: 20em;
+  text-align: left; 
+}
+
+form > button {
+  color: #333;
+  width: 250px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+select {
+  width: 175px;
+}
+
+.view-button {
+  text-decoration: none;
+  font-weight: 800;
+  font-family: 'Raleway';
+  color: #ff6600;
+}
+
+.aligned {
+  text-align: left;
+  width: 50px;
+}
+
+.dark-text {
+  color: #333;
+}
+
+.titles-detail {
+    /* margin-left: 20em;
+    margin-right: 20em; */
+    text-align: center; 
+}
+
+.text-details {
+  text-align: center; 
+  margin: 5px;
 }

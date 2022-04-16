@@ -1,10 +1,10 @@
 <template name="project">
     <li>
         <input type="checkbox" checked="{{isChecked}}" class="toggle-checked" />
-        <span>{{text}}</span>
+        <span class="dark-text">{{text}}</span>
         <span>{{type}}</span>
-        <span>price: {{price}}</span>
-        <a href="/project/{{_id}}/{{price}}/{{type}}">View Details</a>
+        <span class="dark-text">price: {{price}}</span>
+        <a class="view-button" href="/project/{{_id}}/{{price}}/{{type}}">View Details</a>
         <button class="delete">&times;</button>
     </li>
 </template>

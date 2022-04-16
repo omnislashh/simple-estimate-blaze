@@ -1,9 +1,9 @@
 <template name="item">
-    <!-- <li> -->
+    <li>
         <input type="checkbox" checked="{{isChecked}}" class="toggle-checked" />
-        item:<span>{{text}}</span> - belongs to task:
-        <span>{{task}}</span>
+        <span class="aligned dark-text">item: </span><span class="aligned">{{text}} </span><span class="aligned dark-text">- belongs to task: </span>
+        <span class="aligned">{{task}}</span>
         <button class="delete">&times;</button>
 
-    <!-- </li> -->
+    </li>
 </template>

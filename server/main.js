@@ -148,7 +148,7 @@ ItemsCollection.insert({
 });
 
 
-const SEED_USERNAME = 'meteorite';
+const SEED_USERNAME = 'defacto-user';
 const SEED_PASSWORD = 'password';
  
 Meteor.startup(() => {

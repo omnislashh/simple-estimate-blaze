@@ -10,17 +10,19 @@
             <div class="app-bar">
                 
                 <div class="app-header">
-                    <h1>Todo Projects {{incompleteProjectCount}}</h1>
-                    <h1>Todo List {{incompleteCount}}</h1>
+                    <h2>Websites {{incompleteProjectCount}}</h2>
+                    <h2>Features {{incompleteCount}}</h2>
                 </div>
             </div>
+           
         </header>
         
         <div class="main">
             {{#if isUserLogged}}
                 <div class="user">
-                    {{getUser.username}} 🚪
+                    {{getUser.username}} <span class="exit">🚪</span>
                 </div>
+                
                 
                 {{> form}}
                 <!-- {{> my-projectform}}
@@ -40,7 +42,7 @@
                     <div class="loading">loading...</div>
                 {{/if}}
                 <h2>Tasks</h2>
-                <!-- <div class="taskfeatures">{{> taskfeatures}}</div> -->
+                <div class="taskfeatures">{{> taskfeatures}}</div>
                 <div class="tasks">
                     {{#each tasks}}
                         {{> task}}                       
@@ -49,7 +51,7 @@
                     {{/each}}
                 </div>
                 <h2>Projects</h2>
-                <!-- <div class="projectstotal">{{> projectstotal}}</div> -->
+                <div class="projectstotal">{{> projectstotal}}</div>
                 <ul class="projects">
                     {{#each projects}}
                         {{> project}}
@@ -61,7 +63,7 @@
                         {{> item}}
                     {{/each}}
                 </ul>
-                <!-- <div class="totalglobal">{{> totalglobal}}</div> -->
+                <div class="totalglobal">{{> totalglobal}}</div>
             {{else}}
                 {{> login }}
                 {{> test }}
